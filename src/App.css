@@ -1,38 +1,301 @@
-.App {
-  text-align: center;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    color: #e2e2eb;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    background-color: #1B2430
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-.App-link {
-  color: #61dafb;
+.topSide {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+    font-weight: 700;
+    font-style: italic;
+    padding: 15px 5px;
 }
+
+h1, h4 {
+    color: #e2e2eb;
+}
+
+.cart {
+    background-color: #1B2430;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    opacity: 0.9;
+    height: 100vh;
+    overflow: auto;
+}
+
+.allDishes {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    color: #D6D5A8;
+}
+
+.dishPhoto {
+    display: flex;
+    margin: 10px;
+    width: 70%;
+    border-radius: 7px;
+}
+
+.allDishesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.dishContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px 0;
+    width: 30%;
+}
+.dishContainer:hover {
+    background-color: #1B2430;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.dishName {
+    padding: 10px 5px;
+    font-size: 20px;
+}
+
+.categoriesContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.foodCategory {
+    font-size: 18px;
+    padding: 5px 10px;
+    color:#1B2430;
+}
+
+.catCont {
+    display: flex;
+    flex-direction: column;
+}
+
+.question {
+    display: flex;
+    align-self: center;
+}
+
+.foodCategoryButton {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.foodCategoryButtonSelected {
+    background-color: #678A01;
+}
+
+.foodCategoryButton:hover {
+    background-color: #FEEC9B;
+    color: #678A01;
+}
+
+.quantity {
+    display: flex;
+    justify-content: space-around;
+    margin: 5px 0 10px;
+}
+
+.numberOfQuantity {
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+.bin {
+    width: 25px;
+    cursor: pointer;
+    background-color: #e2e2eb;
+    padding: 5px;
+    margin-left: 10px;
+}
+.bin:hover {
+    background-color: #E83100;
+}
+
+.add {
+    background-color: #678A01;
+    padding: 5px 15px;
+    font-size: 16px;
+    margin: 10px 0;
+    color: #e2e2eb;
+    cursor: pointer;
+    border: none;
+}
+
+.add:hover {
+    background-color: #8ab446;
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px;
+}
+
+.showCartList {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.total h3{
+    margin: 5px;
+    color: #e2e2eb;
+}
+
+.list-portion {
+    padding: 5px;
+    font-style: italic;
+}
+.list-price {
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.portion-bin-container {
+    display: flex;
+    justify-content: space-between;
+}
+.boldPortionNumber {
+    color: #E83100;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.dishPrice {
+    padding: 5px;
+    font-size: 18px;
+}
+
+.list-name {
+    color: #FEEC9B;
+    font-size: 18px;
+}
+
+.cartIcon {
+    width: 30px;
+    position: relative;
+}
+
+.productQuantityInCart{
+    color: #e2e2eb;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+}
+
+
+/* MEDIA QUERY */
+
+@media all and (min-width: 481px) and (max-width: 820px) {
+    .cart {
+        display: none;
+    }
+    .allDishesContainer {
+        margin-top: 20px;
+    }
+    .dishContainer {
+        width: 40%;
+        margin: 5px 10px;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 36px;
+        padding: 20px 5px;
+    }
+    .foodCategory {
+        font-size: 24px;
+        padding: 5px;
+    }
+    .foodCategoryButton {
+        padding: 5px;
+    }
+    .dishName, .dishPrice {
+        padding: 5px;
+        font-size: 24px;
+        display: flex;
+        text-align: center;
+    }
+
+    .dishName {
+        flex: 1 1;
+    }
+    .dishPhoto {
+        width: 100%;
+    }
+    .add {
+        font-size: 20px;
+    }
+}
+
+@media all and (min-width: 320px) and (max-width: 480px) {
+
+    .allDishesContainer {
+        margin-top: 20px;
+    }
+    h1 {
+        font-weight: 400;
+        font-size: 24px;
+        padding: 20px 5px;
+    }
+    .cart {
+        display: none;
+    }
+    .categoriesContainer {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .foodCategory {
+        font-size: 16px;
+        padding: 5px;
+    }
+    .foodCategoryButton {
+        cursor: pointer;
+        padding: 5px;
+        margin: 0;
+    }
+    .dishPhoto {
+        width: 100%;   
+    }
+    .dishName {
+        padding: 5px;
+        font-size: 20px;
+    }
+}
+
